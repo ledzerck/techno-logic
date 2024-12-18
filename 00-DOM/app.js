@@ -1,9 +1,10 @@
 const addButton = document.querySelector('#add-button')
 const todoInput = document.querySelector('#todo-input')
+const todosContainer = document.querySelector('#todo-container')
 
 // Variable global para guardar los ToDo's
 
-const todos = []
+const todos = ['Comprar manzanas', 'Pasear al gato']
 
 function clickHandler(event) {
     event.preventDefault()
@@ -12,9 +13,20 @@ function clickHandler(event) {
         alert('Por favor ingresa una tarea')
         return
     }
-    console.log(todoText)
+    
     todos.push(todoText)
-    console.log(todos)
+    renderTodos()
+}
+
+function renderTodos(){
+    todosContainer.innerHTML = '';
+    for (let i = 0; i < todos.length; i++) {
+        const todoItem = document.createElement('article')
+        todoItem.textContent = todos[i]
+        todosContainer.appendChild(todoItem)
+    }
 }
 
 addButton.addEventListener('click', clickHandler )
+
+renderTodos()
