@@ -4,9 +4,15 @@ const todosContainer = document.querySelector('#todo-container')
 const form = document.querySelector('#create-to-do-form')
 
 // Variable global para guardar los ToDo's
-let todos = ['Comprar manzanas', 'Pasear al gato']
+let todos = [
+   {id: 1734543653127, label: "Comprar manzanas"},
+   {id: 1734543658321, label: "Pasear al perro"}
+]
 
 
+
+
+// Función para crear la tarea
 function submitHandler(event) {
     // Con esto evitamos que el form haga reload en la página (Qué es el comportamiento por defecto)
     event.preventDefault()
@@ -16,8 +22,15 @@ function submitHandler(event) {
         alert('Por favor ingresa una tarea')
         return
     }
+    const id = Date.now()
+
+    const newTodo = {
+        label: todoText,
+        id: id
+    }
+
     // Agregamos la tarea al Array de todo's
-    todos.push(todoText)
+    todos.push(newTodo)
     renderTodos()
 
     // Limpiar el input
@@ -27,15 +40,13 @@ function submitHandler(event) {
 
 // Esta función borra las tareas del render
 function deleteHandler(event) {
-    // Seleccionamos el elemento padre del botón de borrar que se presionó
-    const itemTodelete = event.target.parentNode
+    // Seleccionamos el elemento padre del botón de borrar que se presionó y obtenemos su id, que contiene un Date.now
+    const idToDelete = event.target.parentNode.getAttribute('data-id')
 
-    // Podemos usar querySelector para seleccionar solo dentro de un contenedor
-    const textToDelete = itemTodelete.querySelector('span').textContent
-    // Aquí modificamos el array de los todos
     const newTodos = []
+
     for (let i = 0; i < todos.length; i++) {
-        if (textToDelete !== todos[i] ) {
+        if (idToDelete != todos[i].id ) {
             newTodos.push(todos[i])
         }  
     }
@@ -53,10 +64,11 @@ function renderTodos(){
     for (let i = 0; i < todos.length; i++) {
         // Creamos el contenedor de cada tarea
         const todoItem = document.createElement('article')
+        todoItem.setAttribute('data-id', todos[i].id)
 
         // Creamos un span, que contenga la tarea
         const todoContent = document.createElement('span')
-        todoContent.textContent = todos[i]
+        todoContent.textContent = todos[i].label
 
         // Creamos un botón para borrar el elemento
         const button = document.createElement('button')
