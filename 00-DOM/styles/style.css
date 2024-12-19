@@ -1,0 +1,153 @@
+/* GENERALEs */
+
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+}
+
+.button {
+    padding: .6em 1em;
+    border: none;
+    border-radius: 20px;
+    font-weight: 900;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.green {
+    background-color: #66b943;
+    color: #fff;
+}
+
+.yellow {
+    background-color: #e9d53c;
+    color: #fff;
+}
+
+.red {
+    background-color: #e44444;
+    color: #fff;
+}
+
+
+/* HEADEr */
+
+#header {
+    padding: 1rem;
+    /* background-color: #f9f9f9; */
+    box-shadow: rgba(0, 0, 0, .2) 0 0 10px;
+}
+
+#logo {
+    max-width: 160px;
+}
+
+/* FORM Agregar tareas */
+
+#create-to-do-form {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#create-to-do-form input[type=text] {
+    padding: .5em 1em;
+    border: 1px solid #bbb;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+/* MAIN */
+main {
+    padding: 1rem;
+}
+
+main #main-title {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+
+
+/* TAREAS */
+
+#status-title-active {
+    color: #77b08e;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+#todo-container .todo:last-child {
+    margin-bottom: 0;
+}
+
+.todo {
+    font-size: .85em;
+    color: #666;
+    border: 1px solid #eee;
+    padding: .5rem 1em;
+    margin-bottom: .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.todo-name {
+    font-weight: 900;
+    color: #000;
+    flex-basis: 100%;
+}
+
+/* TODO Status */
+
+.todo-status {
+    padding: .1rem .4rem;
+    letter-spacing: .02em;
+    font-size: .8em;
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, .1) 1px 1px 1px;
+    justify-self: flex-end;
+}
+
+.todo-status.Activo {
+    background-color: #77b08e;
+}
+.todo-status.Pendiente {
+    background-color: #ffe368;
+}
+.todo-status.Terminado {
+    background-color: #ff7d7d;
+}
+
+/* TODO ACTIONS */
+
+.todo .action {
+    border: none;
+    background: none;
+    margin-left: 40px;
+}
+
+.todo .action .bi:hover {
+    cursor: pointer;
+}
+
+.todo .action.eliminar {
+    color: #ff5a5a;
+}
