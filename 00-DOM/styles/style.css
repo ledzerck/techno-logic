@@ -9,10 +9,14 @@
 
 html {
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #333;
+}
+
+body {
+    background-color: #faf9fe;
 }
 
 .button {
@@ -27,7 +31,7 @@ html {
 }
 
 .green {
-    background-color: #66b943;
+    background-color: #7f57f1;
     color: #fff;
 }
 
@@ -49,6 +53,7 @@ html {
     /* background-color: #f9f9f9; */
     box-shadow: rgba(0, 0, 0, .2) 0 0 10px;
     margin-bottom: 20px;
+    background-color: #fff;
 }
 
 #logo {
@@ -57,8 +62,15 @@ html {
 
 /* FORM Agregar tareas */
 
-#create-to-do-form {
+.form-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 1rem;
+}
+
+#create-to-do-form {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,15 +79,20 @@ html {
 
 #create-to-do-form input[type=text] {
     padding: .5em 1em;
-    border: 1px solid #bbb;
+    border: 1px solid #e7dbfe;
     border-radius: 1rem;
     width: 100%;
 }
 
+#create-to-do-form input[type=text]::placeholder {
+    color: rgb(141, 104, 205);
+    opacity: 1;
+  }
+
 /* FORM STATUS */
 
 .status-options {
-    flex-basis: 500px;
+    flex-basis: 400px;
 }
 .choose-status {
     display: inline-block;
@@ -94,26 +111,38 @@ html {
     font-size: .7em;
     letter-spacing: .02em;
     border-radius: 20px;
-    color: #c0c0c0;
-    border: 1px solid #b4b4b4;
+    color: #9b90b9;
+    border: 1px solid #cac4da;
+    background-color: #dfdbed;
 }
 
 .status-activo input:checked + span {
-    color: #77b08e;
+    color: #fff;
+    background-color: #77b08e;
     border: 1px solid #77b08e;
 }
 
 .status-pendiente input:checked + span {
-    color: #f6d542;
+    color: #fff;
+    background-color: #f6d542;
     border: 1px solid #f6d542;
 }
 
 .status-terminado input:checked + span {
-    color: #ff7d7d;
+    color: #fff;
+    background-color: #ff7d7d;
     border: 1px solid #ff7d7d;
 }
 
 /* MAIN */
+
+.main-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 main {
     padding: 1rem;
 }
@@ -132,6 +161,12 @@ main #main-title {
     margin-bottom: 1rem;
 }
 
+#todo-container {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #f6f6f6;
+    padding: 1rem;
+}
 
 #todo-container .todo:last-child {
     margin-bottom: 0;
@@ -140,19 +175,17 @@ main #main-title {
 .todo {
     font-size: .85em;
     color: #666;
-    border: 1px solid #eee;
-    padding: .5rem 1em;
-    margin-bottom: .6rem;
+    padding: .8rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 30px;
     background-color: #fff;
+    border-bottom: 1px solid #f3f3f3;
 }
 
 .todo-name {
-    font-weight: 900;
-    color: #000;
+    font-weight: 700;
+    color: #888;
     flex-basis: 100%;
 }
 
@@ -161,22 +194,22 @@ main #main-title {
 .todo-status {
     padding: .1rem .4rem;
     letter-spacing: .02em;
-    font-size: .8em;
+    font-size: .7em;
     border-radius: 20px;
     justify-self: flex-end;
 }
 
 .todo-status.Activo {
     color: #77b08e;
-    border: 1px solid #77b08e;
+    border: 1px solid #bee5ce;
 }
 .todo-status.Pendiente {
     color: #f6d542;
-    border: 1px solid #f6d542;
+    border: 1px solid #fff0ab;
 }
 .todo-status.Terminado {
     color: #ff7d7d;
-    border: 1px solid #ff7d7d;
+    border: 1px solid #ffe2e2;
 }
 
 /* TODO ACTIONS */
