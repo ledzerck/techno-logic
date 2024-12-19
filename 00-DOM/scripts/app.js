@@ -3,6 +3,7 @@ const todoInput = document.querySelector('#todo-input')
 const todosContainer = document.querySelector('#todo-container')
 const form = document.querySelector('#create-to-do-form')
 
+
 // Variable global para guardar los ToDo's
 let todos = [
    {id: 1734543653127, label: "Comprar manzanas", status: "Activo"},
@@ -17,17 +18,29 @@ let todos = [
 function submitHandler(event) {
     // Con esto evitamos que el form haga reload en la página (Qué es el comportamiento por defecto)
     event.preventDefault()
+
+    // Usamos Date.now para otorgarle un id único
+    const id = Date.now()
+
     // Guardamos el texto de nuestro form
     const todoText= todoInput.value
     if(todoText === ''){
         alert('Por favor ingresa una tarea')
         return
     }
-    const id = Date.now()
+
+    // Recogemos el valor del Status
+    let getStatus = document.querySelector('input[name="to-do-status"]:checked')
+
+    if(getStatus === null){
+        alert('Por favor elige un status para la tarea')
+        return
+    }
 
     const newTodo = {
         label: todoText,
-        id: id
+        id: id,
+        status: getStatus.value
     }
 
     // Agregamos la tarea al Array de todo's
@@ -35,6 +48,7 @@ function submitHandler(event) {
     renderTodos()
 
     // Limpiar el input
+    getStatus.checked = false
     todoInput.value = ''
 }
 

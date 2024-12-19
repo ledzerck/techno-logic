@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script defer src="scripts/app.js"></script>
     <title>Título</title>
 </head>
+
 <body>
     <header id="header">
         <a href="#"><img src="imgs/logoipsum.svg" id="logo"></a>
@@ -15,6 +17,20 @@
 
     <form id="create-to-do-form">
         <input type="text" id="todo-input" placeholder="Escribe una tarea">
+        <div class="status-options">
+            <label class="choose-status status-activo">
+                <input type="radio" name="to-do-status" value="Activo">
+                <span>Activo</span>
+            </label>
+            <label class="choose-status status-pendiente">
+                <input type="radio" name="to-do-status" value="Pendiente">
+                <span>Pendiente</span>
+            </label>
+            <label class="choose-status status-terminado">
+                <input type="radio" name="to-do-status" value="Terminado">
+                <span>Terminado</span>
+            </label>
+        </div>
         <button id="add-button" class="button green">+&nbsp;agregar</button>
     </form>
 
@@ -25,6 +41,9 @@
 
         </section>
     </main>
+
     
+
 </body>
+
 </html>
