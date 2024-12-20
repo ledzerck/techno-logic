@@ -5,11 +5,12 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Montserrat, sans-serif;
 }
 
 html {
     font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+    font-family: Montserrat, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #333;
@@ -23,14 +24,14 @@ body {
     padding: .6em 1em;
     border: none;
     border-radius: 20px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .button:hover {
     cursor: pointer;
 }
 
-.green {
+.purple {
     background-color: #7f57f1;
     color: #fff;
 }
@@ -70,6 +71,11 @@ body {
     padding: 1rem;
 }
 
+#form-inputs {
+    position: relative;
+    width: 100%;
+}
+
 #create-to-do-form {
     display: flex;
     align-items: center;
@@ -77,22 +83,52 @@ body {
     gap: 1rem;
 }
 
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: .5rem;
+    transform: ;
+    color: #7f57f1;
+    animation: here 1s ease infinite alternate;
+}
+
+@keyframes here {
+    0% {
+        transform: translateY(-50%) translateX(-1px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(2px);
+    }
+}
+
 #create-to-do-form input[type=text] {
+    box-sizing: border-box;
     padding: .5em 1em;
     border: 1px solid #e7dbfe;
     border-radius: 1rem;
     width: 100%;
+    color: #7252cc;
+    padding-left: 28px;
+    padding-right: 230px;
+    font-family: Montserrat;
+}
+
+#create-to-do-form input[type=text]:focus {
+    outline: none;
+    border: 1px solid #7f57f1;
 }
 
 #create-to-do-form input[type=text]::placeholder {
-    color: rgb(141, 104, 205);
+    color: rgb(179, 154, 221);
     opacity: 1;
   }
 
 /* FORM STATUS */
 
 .status-options {
-    flex-basis: 400px;
+    position: absolute;
+    top: 4px;
+    right: .5rem;
 }
 .choose-status {
     display: inline-block;
@@ -108,7 +144,7 @@ body {
 
 .choose-status span {
     padding: .1rem .4rem;
-    font-size: .7em;
+    font-size: .6em;
     letter-spacing: .02em;
     border-radius: 20px;
     color: #9b90b9;
@@ -192,7 +228,7 @@ main #main-title {
 /* TODO Status */
 
 .todo-status {
-    padding: .1rem .4rem;
+    padding: .12rem .43rem;
     letter-spacing: .02em;
     font-size: .7em;
     border-radius: 20px;
@@ -200,16 +236,16 @@ main #main-title {
 }
 
 .todo-status.Activo {
-    color: #77b08e;
-    border: 1px solid #bee5ce;
+    background-color: #77b08e;
+    color: #fff;
 }
 .todo-status.Pendiente {
-    color: #f6d542;
-    border: 1px solid #fff0ab;
+    background-color: #f6d542;
+    color: #fff;
 }
 .todo-status.Terminado {
-    color: #ff7d7d;
-    border: 1px solid #ffe2e2;
+    background-color: #ff7d7d;
+    color: #fff;
 }
 
 /* TODO ACTIONS */
