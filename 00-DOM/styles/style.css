@@ -31,6 +31,10 @@ body {
     cursor: pointer;
 }
 
+.button.purple:hover {
+    background-color: #60cf44;
+}
+
 .purple {
     background-color: #7f57f1;
     color: #fff;
